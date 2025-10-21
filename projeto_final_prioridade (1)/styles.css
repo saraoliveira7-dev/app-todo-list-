@@ -1,0 +1,537 @@
+/* ======================================================= */
+/* 1. RESET E ESTRUTURA BASE (LAYOUT 320x640) */
+/* ======================================================= */
+
+body {
+  font-family: Arial, sans-serif;
+  
+  /* NOVO FUNDO DE IMAGEM */
+  background-image: url('https://static.vecteezy.com/ti/vetor-gratis/p1/2549469-ondulado-abstrato-lilas-fundo-vetor.jpg'); 
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+/* Estilo do "iphone" (contêiner do layout 320x640) */
+.iphone {
+  width: 320px;
+  height: 640px;
+  background: linear-gradient(180deg, #ffffff 0%, #f3e6fb 100%);
+  border-radius: 40px;
+  border: 6px solid #ccc;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+  padding: 25px 20px;
+}
+
+/* Estilo da barra superior (Hora) */
+.top-bar {
+  text-align: left;
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 25px;
+  color: #6c00b0;
+}
+
+/* Contêiner para permitir o scroll do conteúdo principal */
+.content {
+    height: calc(100% - 50px);
+    overflow-y: auto; 
+    padding-top: 10px;
+}
+
+
+/* ======================================================= */
+/* 2. ESTILOS COMUNS (Geral, Cadastro, Inputs, Links) */
+/* ======================================================= */
+
+/* Ícone de usuário (Tela de Cadastro) */
+.user-icon {
+  display: flex;
+  justify-content: center;
+  margin: 50px 0 35px 0;
+}
+
+.user-icon svg {
+  width: 100px;
+  height: 100px;
+}
+
+/* Título Geral da Página (se usado) */
+.page-title {
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  color: #6c00b0;
+  margin-bottom: 20px;
+}
+
+/* Inputs de Formulário (Cadastro e Nova Atividade) */
+.input-box {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  border: 2px solid #b84adb;
+  border-radius: 15px;
+  padding: 14px;
+  box-shadow: 0 3px 8px rgba(184,74,219,0.15);
+  transition: all 0.3s ease;
+  background: #fff;
+}
+
+.input-box:focus-within {
+  border-color: #9e35b8;
+  box-shadow: 0 0 12px rgba(158,53,184,0.5);
+}
+
+.input-box .icon {
+  font-size: 22px;
+  margin-right: 12px;
+  color: #b84adb;
+}
+
+input, textarea {
+  border: none;
+  outline: none;
+  font-size: 18px;
+  flex: 1;
+  padding: 6px 0;
+  color: #333;
+  background: transparent;
+  resize: none;
+}
+
+/* Botões Principais */
+.btn {
+  width: 100%;
+  padding: 16px;
+  background: linear-gradient(90deg, #b84adb, #9e35b8);
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  margin-top: 20px;
+  box-shadow: 0 5px 12px rgba(184,74,219,0.5);
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background: linear-gradient(90deg, #9e35b8, #b84adb);
+  transform: scale(1.02);
+  box-shadow: 0 6px 16px rgba(158,53,184,0.6);
+}
+
+/* Links (Voltar e Ver Desempenho) */
+.link, .back-link {
+  display: block;
+  text-align: center;
+  margin-top: 15px;
+  color: #b84adb;
+  font-size: 15px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.link:hover, .back-link:hover {
+  color: #6c00b0;
+  text-decoration: underline;
+}
+
+
+/* ======================================================= */
+/* 3. ESTILOS DA TELA "MINHAS ATIVIDADES" (Lista) */
+/* ======================================================= */
+
+/* Botão de Título Principal (Minhas Atividades) */
+.title-btn {
+  width: 100%;
+  padding: 16px;
+  background: linear-gradient(90deg, #b84adb, #9e35b8);
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  margin-bottom: 30px;
+  box-shadow: 0 5px 12px rgba(184,74,219,0.5);
+  transition: all 0.3s ease;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+/* Filtro de atividades (Select Box) */
+.filter {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.select-box {
+  width: 80%;
+  padding: 8px;
+  border: 2px solid #b84adb;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #6c00b0;
+  background: #fff;
+}
+
+/* Lista de tarefas */
+.task-list {
+  margin-top: 20px;
+  margin-bottom: 30px;
+  overflow-y: auto;
+  max-height: 250px;
+}
+
+.task-item {
+  display: flex; 
+  align-items: center;
+  margin-bottom: 15px;
+  padding: 10px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+}
+
+.task-item input[type="checkbox"] {
+  margin-right: 15px;
+}
+
+.task-item:hover {
+  background-color: #f1e5f7;
+}
+
+
+/* ======================================================= */
+/* 4. ESTILOS DA TELA "NOVA ATIVIDADE" */
+/* ======================================================= */
+
+/* Botão de Título Roxo (Nova Atividade / Detalhe) */
+.purple-main-title {
+    background-color: #b84adb; 
+    color: white;
+    padding: 12px 30px; 
+    border: none;
+    border-radius: 25px; 
+    font-size: 18px; 
+    font-weight: bold;
+    cursor: default; 
+    display: block; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 0 auto 30px; 
+    text-align: center;
+}
+
+/* Cartão da Atividade (onde vai o nome da atividade) */
+.activity-card {
+    background-color: #ffffff; 
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: flex-start; 
+    justify-content: space-between;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+/* Campo de texto (dentro do card) */
+.activity-description-input {
+    flex-grow: 1; 
+    border: none; 
+    resize: none; 
+    font-size: 1em;
+    padding: 5px 0;
+    color: #333;
+    font-weight: 500;
+    outline: none; 
+    box-shadow: none;
+    line-height: 1.4; 
+}
+
+.icon-container {
+    width: 50px; 
+    height: 50px;
+    background-color: #e6ffe6; 
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 15px;
+}
+
+/* Formulário de Detalhes (Data e Hora) */
+.form-details {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.input-group {
+    flex: 1;
+    margin-right: 10px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+    font-weight: 500;
+}
+
+.small-input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+    color: #b84adb; 
+    font-weight: bold;
+    text-align: center;
+}
+
+/* ---------------------------------------------------------------------- */
+/* SEÇÃO DE PRIORIDADE (BOTÕES CLICÁVEIS) */
+/* ---------------------------------------------------------------------- */
+.radio-group {
+    display: flex;
+    /* Coloca os botões um abaixo do outro */
+    flex-direction: column; 
+    gap: 10px; 
+    margin-bottom: 20px;
+}
+
+/* 1. Esconde o input de rádio nativo */
+.radio-group input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* 2. Estilo do Rótulo (Botão Padrão/Inativo) */
+.radio-group label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    /* Copia o padding e fonte dos botões de ação (Editar/Excluir) */
+    padding: 12px; 
+    font-size: 16px;
+    font-weight: bold;
+    
+    border: 1px solid #ddd; 
+    border-radius: 25px; /* Formato de botão */
+    background-color: #f7f7f7; 
+    color: #4a4a4a; 
+    
+    cursor: pointer; /* Indica que é clicável */
+    text-transform: capitalize; 
+    transition: all 0.2s ease-in-out;
+    user-select: none;
+
+    position: static;
+    padding-left: 20px; 
+    height: auto;
+}
+
+/* 3. Estilo HOVER (Passar o mouse) */
+.radio-group label:hover {
+    border-color: #b84adb; 
+    background-color: #f0e6fa; 
+}
+
+/* 4. Estilo ATIVO (Enquanto está sendo pressionado) */
+.radio-group label:active {
+    transform: translateY(1px); 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+    opacity: 0.9; 
+}
+
+/* 5. Estilo CHECKED (Permanece Selecionado - ROXO E BRANCO) */
+.radio-group input[type="radio"]:checked + label {
+    background-color: #b84adb; /* Fundo roxo */
+    color: white; /* Texto branco */
+    border: none; 
+    box-shadow: 0 4px 8px rgba(184, 74, 219, 0.4); 
+    
+    /* Remove o efeito de pressionar para que o estado ROXO seja o final */
+    transform: none; 
+}
+/* ---------------------------------------------------------------------- */
+
+/* Remove o estilo de rádio customizado antigo (bolinha) */
+.radio-group label::before, 
+.radio-group label::after {
+    content: none;
+}
+
+/* Botões de Ação (Editar e Excluir) */
+.action-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.purple-btn, .delete-btn {
+    flex: 1; 
+    padding: 12px;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: bold;
+    margin: 0 5px;
+    background-color: #b84adb; 
+    color: white; 
+} 
+
+/* ESTILOS PARA LINKS DE NAVEGAÇÃO (Voltar e Ver meu desempenho) */
+.back-link {
+    display: block; 
+    text-align: center;
+    text-decoration: none; 
+    color: #b84adb; 
+    font-weight: 500;
+    margin-top: 25px; 
+    font-size: 16px;
+}
+
+.performance-link {
+    display: block; 
+    text-align: center;
+    text-decoration: underline; 
+    color: #4a4a4a; 
+    font-weight: 500;
+    margin-top: 10px; 
+    font-size: 14px;
+}
+
+/*
+
+/* ======================================================= */
+/* 5. ESTILOS DA TELA "DESEMPENHO" */
+/* ======================================================= */
+
+/* Seção dos Gráficos de Pizza */
+.pie-charts-section {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.chart-container {
+    width: 45%;
+}
+
+.chart-container h3 {
+    color: #333;
+    font-size: 1.1em;
+    margin-bottom: 15px;
+}
+
+/* Base do Gráfico de Pizza (Círculo) */
+.pie-chart {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin: 0 auto 10px;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.chart-value {
+    position: absolute;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #333; 
+    background-color: white; 
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.chart-label-value {
+    color: #666;
+    font-size: 0.9em;
+}
+
+/* Gráfico Roxo (Concluídas) */
+.purple-pie-chart {
+    background: conic-gradient(#b84adb 0% 60%, #f0f0f0 60% 100%);
+}
+.purple-pie-chart .chart-value {
+    color: #b84adb; 
+}
+
+/* Gráfico Cinza (Pendentes) */
+.gray-pie-chart {
+    background: conic-gradient(#666 0% 40%, #f0f0f0 40% 100%);
+}
+
+.separator {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), #e0e0e0, rgba(0, 0, 0, 0));
+    margin: 20px 0;
+}
+
+/* Gráfico de Barras ORGANIZADO */
+.bar-chart-section h3 {
+    text-align: center;
+    color: #b84adb;
+    margin-bottom: 20px;
+}
+
+.bar-chart-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end; 
+    height: 200px;
+    border-bottom: 2px solid #ddd; 
+    padding-bottom: 5px;
+}
+
+.bar-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 10%; 
+    height: 100%; 
+    justify-content: flex-end; 
+}
+
+.bar {
+    width: 100%;
+    background-color: #b84adb; 
+    border-radius: 5px 5px 0 0;
+    transition: height 0.3s ease;
+}
+
+.day-label {
+    font-size: 0.8em;
+    color: #666;
+    font-weight: 500;
+    margin-top: 5px; 
+}

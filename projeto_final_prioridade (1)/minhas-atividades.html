@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Minhas Atividades</title>
+</head>
+<body>
+  <div class="iphone">
+    <div class="top-bar">
+      <span>9:41</span>
+    </div>
+
+    <div class="user-info">
+      <button class="title-btn">Minhas Atividades</button>
+    </div>
+
+    <div class="filter">
+      <label for="atividade">Filtrar Atividades</label>
+      <select id="atividade" class="select-box" onchange="filterTasks()">
+        <option value="concluidas">Concluídas</option>
+        <option value="pendentes">Pendentes</option>
+        <option value="todas">Todas</option>
+      </select>
+    </div>
+
+    <div class="task-list">
+      <div class="task-item concluidas">
+        <input type="checkbox" id="atividade01">
+        <label for="atividade01" class="task-text">Atividade 01</label>
+      </div>
+      <div class="task-item concluidas">
+        <input type="checkbox" id="atividade02">
+        <label for="atividade02" class="task-text">Atividade 02</label>
+      </div>
+      <div class="task-item concluidas">
+        <input type="checkbox" id="atividade03">
+        <label for="atividade03" class="task-text">Atividade 03</label>
+      </div>
+
+      <div class="task-item pendentes">
+        <input type="checkbox" id="atividade04">
+        <label for="atividade04" class="task-text">Atividade 04</label>
+      </div>
+      <div class="task-item pendentes">
+        <input type="checkbox" id="atividade05">
+        <label for="atividade05" class="task-text">Atividade 05</label>
+      </div>
+      <div class="task-item pendentes">
+        <input type="checkbox" id="atividade06">
+        <label for="atividade06" class="task-text">Atividade 06</label>
+      </div>
+      <div class="task-item pendentes">
+        <input type="checkbox" id="atividade07">
+        <label for="atividade07" class="task-text">Atividade 07</label>
+      </div>
+    </div>
+
+    <a href="criar-nova-ativiade.html" class="link">Criar Nova Atividade</a>
+    <a href="desempenho.html" class="link">Ver Desempenho</a>
+  </div>
+
+  <script>
+    function filterTasks() {
+      const filter = document.getElementById('atividade').value;
+      const allTasks = document.querySelectorAll('.task-item');
+      
+      allTasks.forEach(task => {
+        if (filter === 'pendentes' && task.classList.contains('pendentes')) {
+          task.style.display = 'flex';
+        } else if (filter === 'concluidas' && task.classList.contains('concluidas')) {
+          task.style.display = 'flex';
+        } else if (filter === 'todas') {
+          task.style.display = 'flex';
+        } else {
+          task.style.display = 'none';
+        }
+      });
+    }
+    document.addEventListener('DOMContentLoaded', filterTasks);
+  </script>
+</body>
+</html>

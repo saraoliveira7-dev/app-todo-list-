@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Nova Atividade</title>
+</head>
+<body>
+    <div class="iphone">
+        <div class="top-bar">9:41</div>
+
+        <div class="header">
+            <button class="btn purple-main-title">Nova Atividade</button> 
+        </div>
+
+        <div class="content">
+
+            <div class="activity-card">
+                <textarea class="activity-description-input" rows="3">Criação de Wireframes para App To-Do List</textarea>
+
+                <div class="icon-container">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="30" height="30" fill="#00aa00">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                    </svg>
+                </div>
+            </div>
+
+            <div class="form-details">
+                <div class="input-group">
+                    <label>Data:</label>
+                    <input type="text" value="09/01/2025" class="small-input" />
+                </div>
+                <div class="input-group">
+                    <label>Hora:</label>
+                    <input type="text" value="09:00 - 09:09" class="small-input" />
+                </div>
+            </div>
+
+            <div class="priority-section">
+                <label>Prioridade</label>
+                <div class="radio-group">
+                    <input type="radio" id="baixa" name="priority" value="baixa" checked>
+                    <label for="baixa">Baixa</label>
+
+                    <input type="radio" id="media" name="priority" value="media">
+                    <label for="media">Média</label>
+
+                    <input type="radio" id="alta" name="priority" value="alta">
+                    <label for="alta">Alta</label>
+                </div>
+            </div>
+
+            <div class="status-section">
+                <input type="checkbox" id="concluida" />
+                <label for="concluida">Concluída</label>
+            </div>
+
+            <div class="action-buttons">
+                <form action="enviado.html" style="width: 100%; display: flex; justify-content: space-between;">
+                    <button class="btn purple-btn" type="submit">Enviar</button>
+                    <button class="btn delete-btn" type="button">Excluir</button>
+                </form>
+            </div>
+
+            <a href="minhas-atividades.html" class="link back-link">Voltar</a>
+            <a href="desempenho.html" class="link performance-link">Ver meu desempenho</a>
+
+        </div>
+    </div>
+</body>
+</html>
