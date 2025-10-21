@@ -1,5 +1,4 @@
-📌 Descrição do Projeto
-Este projeto tem por objetivo a criação de um aplicativo Todo List, chamado Prioridade. A aplicação simula a interface de um gestor de tarefas para celular, com foco em uma experiência de usuário limpa, intuitiva e visualmente agradável.
+
 
 Este projeto foi criado como parte da disciplina de Projeto de interface Web ministrada pelo professor: Thiago Guimarães Tavares no curso de Sistemas para Internet do IFTO - Campus Palmas.
 
